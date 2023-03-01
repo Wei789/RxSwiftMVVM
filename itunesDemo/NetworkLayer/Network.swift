@@ -14,7 +14,7 @@ protocol Networking {
 }
 
 class Network: Networking {
-    static let baseURL = URL(string: "https://example/news.json")!
+    static let baseURL = URL(string: "https://itunes.apple.com/")!
     private let provider: MoyaProvider<MultiTarget>!
     
     init(provider: MoyaProvider<MultiTarget>? = nil) {

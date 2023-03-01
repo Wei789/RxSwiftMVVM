@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 protocol SearchMusicRepository {
+    func search(term: String) -> Observable<Event<[Music]>>
 }
 
 class SearchMusicRepositoryImpl: SearchMusicRepository {
@@ -17,4 +18,23 @@ class SearchMusicRepositoryImpl: SearchMusicRepository {
     init(api: Networking) {
         self.api = api
     }
+    
+    func search(term: String) -> Observable<Event<[Music]>> {
+        api.request(ItunesAPI.search(term: term))
+            .map { (data: SearchMusicResponse) in
+                data.results.map { item in
+                    Music(artworkUrl100: item.artworkUrl100,
+                          longDescription: item.longDescription ?? "",
+                          hasLongDescription: item.longDescription != nil)
+                }
+            }
+            .asObservable()
+            .materialize()
+    }
+}
+
+struct Music {
+    let artworkUrl100: String
+    let longDescription: String
+    let hasLongDescription: Bool
 }

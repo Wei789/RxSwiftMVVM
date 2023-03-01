@@ -9,13 +9,13 @@ import Foundation
 import Moya
 
 enum ItunesAPI {
-    case searchMusic
+    case search(term: String)
 }
 
 extension ItunesAPI: TargetType {
     var sampleData: Data {
         switch self {
-        case .searchMusic:
+        case .search:
             return "".data(using: .utf8)!
         }
     }
@@ -26,29 +26,29 @@ extension ItunesAPI: TargetType {
     
     var path: String {
         switch self {
-        case .searchMusic:
-            return ""
+        case .search:
+            return "search"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .searchMusic:
+        case .search:
             return .get
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .searchMusic:
+        case .search:
             return nil
         }
     }
     
     var task: Task {
         switch self {
-        case .searchMusic:
-            return .requestPlain
+        case .search(let term):
+            return .requestParameters(parameters: ["term": term], encoding: URLEncoding.default)
         }
     }
 }

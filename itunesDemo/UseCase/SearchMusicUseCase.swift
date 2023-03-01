@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 protocol SearchMusicUseCase {
+    func search(term: String) -> Observable<Event<[Music]>>
 }
 
 class SearchMusicUseCaseImpl: SearchMusicUseCase {
@@ -16,5 +17,9 @@ class SearchMusicUseCaseImpl: SearchMusicUseCase {
     
     init(repo: SearchMusicRepository) {
         self.repo = repo
+    }
+
+    func search(term: String) -> Observable<Event<[Music]>> {
+        repo.search(term: term)
     }
 }

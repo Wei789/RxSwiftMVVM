@@ -14,8 +14,8 @@ struct SearchMusicResponse: Codable {
 
 struct SearchResult: Codable {
     let artistName: String
-    let trackName: String
+    let trackName: String?
     let longDescription: String?
     let artworkUrl100: String
-    let previewUrl: String
+    let previewUrl: String?
 }

@@ -19,6 +19,7 @@
 		16401C2029929807007CC969 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16401C1F29929807007CC969 /* UIViewController.swift */; };
 		16401C2B299B69A7007CC969 /* SearchMusicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16401C2A299B69A7007CC969 /* SearchMusicTest.swift */; };
 		16401C33299B895A007CC969 /* ItunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16401C32299B895A007CC969 /* ItunesAPI.swift */; };
+		1698EEAF29A8A9DC005D3679 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1698EEAE29A8A9DC005D3679 /* SearchResultCell.swift */; };
 		169A99B72991F78E00EDB297 /* SearchMusicUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A99B62991F78E00EDB297 /* SearchMusicUseCase.swift */; };
 		169A99B92991FF4800EDB297 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A99B82991FF4800EDB297 /* SearchViewModel.swift */; };
 		169A99BC2991FFA700EDB297 /* ObservableConvertibleTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A99BB2991FFA700EDB297 /* ObservableConvertibleTypeExtension.swift */; };
@@ -66,6 +67,7 @@
 		16401C28299B69A7007CC969 /* itunesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itunesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16401C2A299B69A7007CC969 /* SearchMusicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicTest.swift; sourceTree = "<group>"; };
 		16401C32299B895A007CC969 /* ItunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAPI.swift; sourceTree = "<group>"; };
+		1698EEAE29A8A9DC005D3679 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		169A99B62991F78E00EDB297 /* SearchMusicUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicUseCase.swift; sourceTree = "<group>"; };
 		169A99B82991FF4800EDB297 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		169A99BB2991FFA700EDB297 /* ObservableConvertibleTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableConvertibleTypeExtension.swift; sourceTree = "<group>"; };
@@ -128,11 +130,11 @@
 			children = (
 				1608CD292991510D00825C23 /* Module */,
 				169A99B42991F1E400EDB297 /* UseCase */,
-				1608CD362991566000825C23 /* Dependencies */,
 				1608CD2E2991554F00825C23 /* Repository */,
 				1608CD2B2991546700825C23 /* NetworkLayer */,
 				1608CD312991559500825C23 /* Model */,
 				169A99BD2992031F00EDB297 /* Util */,
+				1608CD362991566000825C23 /* Dependencies */,
 				169A99BA2991FF7300EDB297 /* Extension */,
 				1608CD28299150F800825C23 /* Supporting Files */,
 			);
@@ -153,18 +155,19 @@
 		1608CD292991510D00825C23 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				1608CD2A2991511500825C23 /* News */,
+				1608CD2A2991511500825C23 /* Search */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		1608CD2A2991511500825C23 /* News */ = {
+		1608CD2A2991511500825C23 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				1608CD1729914F1600825C23 /* SearchViewController.swift */,
 				169A99B82991FF4800EDB297 /* SearchViewModel.swift */,
+				1698EEAE29A8A9DC005D3679 /* SearchResultCell.swift */,
 			);
-			path = News;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		1608CD2B2991546700825C23 /* NetworkLayer */ = {
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1698EEAF29A8A9DC005D3679 /* SearchResultCell.swift in Sources */,
 				1608CD38299157BD00825C23 /* DIContainer.swift in Sources */,
 				16401C33299B895A007CC969 /* ItunesAPI.swift in Sources */,
 				169A99B92991FF4800EDB297 /* SearchViewModel.swift in Sources */,
