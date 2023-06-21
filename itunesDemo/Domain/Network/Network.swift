@@ -9,11 +9,11 @@ import Foundation
 import RxSwift
 import Moya
 
-protocol Networking {
+protocol Networkable {
     func request<T: Codable>(_ target: TargetType) -> Single<T>
 }
 
-class Network: Networking {
+class Network: Networkable {
     static let baseURL = URL(string: "https://itunes.apple.com/")!
     private let provider: MoyaProvider<MultiTarget>!
     

@@ -23,7 +23,8 @@ class SearchViewModel: ViewModel, ViewModelType {
         let searchResult = searchKeyword
             .debounce(.milliseconds(1000), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
-            .flatMapLatest(search).compactMap { $0.element }
+            .flatMapLatest(search)
+            .compactMap { $0.element }
         
         self.input = Input(searchKeyword: searchKeyword.asObserver())
         self.output = Output(music: searchResult.asDriver(),
@@ -32,7 +33,7 @@ class SearchViewModel: ViewModel, ViewModelType {
     
     private func search(term: String) -> Observable<Event<[Music]>> {
         useCase.search(term: term)
-            .do {[weak self] in if let error = $0.error { self?.errors.onNext(error) } }
+            .rerouteError(errorRouter)
             .trackActivity(loading)
     }
 }

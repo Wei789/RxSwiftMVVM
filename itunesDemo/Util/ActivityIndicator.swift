@@ -1,10 +1,3 @@
-//
-//  ActivityIndicator.swift
-//  RxSwiftMVVM
-//
-//  Created by 鄭惟臣 on 2022/5/21.
-//
-
 import Foundation
 import RxSwift
 import RxCocoa

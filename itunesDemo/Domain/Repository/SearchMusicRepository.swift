@@ -13,9 +13,9 @@ protocol SearchMusicRepository {
 }
 
 class SearchMusicRepositoryImpl: SearchMusicRepository {
-    private let api: Networking!
+    private let api: Networkable!
     
-    init(api: Networking) {
+    init(api: Networkable) {
         self.api = api
     }
     
